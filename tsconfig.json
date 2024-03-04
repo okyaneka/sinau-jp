@@ -11,5 +11,7 @@
       "path": "./tsconfig.vitest.json"
     }
   ],
-  "compilerOptions": {}
+  "compilerOptions": {
+    "types": ["vite-plugin-pwa/client"]
+  }
 }

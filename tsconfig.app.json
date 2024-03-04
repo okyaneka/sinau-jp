@@ -8,11 +8,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": [
-      "naive-ui/volar",
-      "unplugin-icons/types/vue",
-      "vite-plugin-pages/client",
-      "vite-plugin-vue-layouts/client"
-    ]
+    "types": ["naive-ui/volar", "unplugin-icons/types/vue", "vite-plugin-pages/client"]
   }
 }
