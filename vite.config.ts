@@ -18,7 +18,7 @@ export default ({ mode }: { mode: string }) => {
   const APP_VERSION = JSON.stringify(packageJson.version)
 
   return defineConfig({
-    base: process.env.mode == 'dev' ? '/sinau-jp' : '/',
+    base: process.env.MODE == 'dev' ? '/sinau-jp' : '/',
     define: {
       APP_VERSION,
       APP_NAME
