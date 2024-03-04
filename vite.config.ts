@@ -18,7 +18,7 @@ export default ({ mode }: { mode: string }) => {
   const APP_VERSION = JSON.stringify(packageJson.version)
 
   return defineConfig({
-    // base: '/sinau-jp',
+    base: process.env.mode == 'dev' ? '/sinau-jp' : '/',
     define: {
       APP_VERSION,
       APP_NAME
@@ -44,7 +44,7 @@ export default ({ mode }: { mode: string }) => {
           ],
           name: process.env.VITE_APP_NAME,
           short_name: APP_NAME,
-          description: 'My Awesome App description',
+          description: '',
           theme_color: '#ffffff',
           icons: [
             {
