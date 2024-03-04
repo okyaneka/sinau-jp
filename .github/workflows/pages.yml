@@ -21,6 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  MODE: ${{ vars.MODE }}
   VITE_APP_NAME: ${{ vars.VITE_APP_NAME }}
 
 jobs:
