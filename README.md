@@ -1,6 +1,6 @@
 # Sinau JP 👋
 
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/okyaneka/sinau-jp/actions/workflows/pages.yml/badge.svg)
 
 This is my-vue-starter v0.0.0
 
