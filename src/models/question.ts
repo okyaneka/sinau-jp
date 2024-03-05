@@ -12,8 +12,19 @@ export interface Question {
   roman: string
 }
 
+export interface QuestionAnswer {
+  question: Question
+  answers: Answer[]
+}
+
+export interface Answer {
+  answer: string
+  correct: boolean
+}
+
 export const questionChars: QuestionChar[] = data.chars
 
+const aiueo = ['あ', 'ア', 'い', 'イ', 'う', 'ウ', 'え', 'エ', 'お', 'オ']
 const tsu = ['ッ', 'っ']
 const en = ['ん', 'ン']
 const yayuyo = ['ゃ', 'ゅ', 'ょ', 'ャ', 'ュ', 'ョ']
@@ -47,7 +58,8 @@ const yayuyoyes = [
 
 function filterChar(char: string, v: QuestionChar, lastChar: boolean) {
   if (en.includes(v.jp) && !char) return false
-  if (tsu.includes(v.jp) && (tsu.includes(char) || !char || lastChar)) return false
+  if (tsu.includes(v.jp) && (tsu.includes(char) || !char || lastChar || aiueo.includes(char)))
+    return false
   if (yayuyo.includes(v.jp) && (!char || !yayuyoyes.includes(char))) return false
   return true
 }
