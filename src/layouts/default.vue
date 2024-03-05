@@ -1,11 +1,12 @@
 <template>
   <n-layout>
-    <n-layout-content class="p-4">
-      <!-- <router-view /> -->
+    <n-layout-content class="bg-gray-50">
       <router-view v-slot="{ Component, route }">
-        <transition>
-          <component :is="Component" :key="route.path" />
-        </transition>
+        <main class="container mx-auto min-h-screen">
+          <transition>
+            <component :is="Component" :key="route.path" />
+          </transition>
+        </main>
       </router-view>
     </n-layout-content>
   </n-layout>

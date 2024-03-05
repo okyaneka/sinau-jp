@@ -87,7 +87,7 @@ export default ({ mode }: { mode: string }) => {
         ],
         eslintrc: { enabled: true },
         resolvers: [NaiveUiResolver()],
-        dirs: ['src/models', 'src/middlewares', 'src/plugins']
+        dirs: ['src/models', 'src/middlewares', 'src/global']
       }),
       Components({
         dts: 'src/components.d.ts',

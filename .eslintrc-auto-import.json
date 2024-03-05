@@ -307,6 +307,10 @@
     "watchThrottled": true,
     "watchTriggerable": true,
     "watchWithFilter": true,
-    "whenever": true
+    "whenever": true,
+    "chars": true,
+    "title": true,
+    "questionChars": true,
+    "questionGenerate": true
   }
 }

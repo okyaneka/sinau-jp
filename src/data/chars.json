@@ -1,0 +1,754 @@
+{
+  "chars": [
+    {
+      "jp": "あ",
+      "roman": "A",
+      "type": "hiragana"
+    },
+    {
+      "jp": "い",
+      "roman": "I",
+      "type": "hiragana"
+    },
+    {
+      "jp": "う",
+      "roman": "U",
+      "type": "hiragana"
+    },
+    {
+      "jp": "え",
+      "roman": "E",
+      "type": "hiragana"
+    },
+    {
+      "jp": "お",
+      "roman": "O",
+      "type": "hiragana"
+    },
+    {
+      "jp": "か",
+      "roman": "KA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "き",
+      "roman": "KI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "く",
+      "roman": "KU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "け",
+      "roman": "KE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "こ",
+      "roman": "KO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "さ",
+      "roman": "SA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "し",
+      "roman": "SHI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "す",
+      "roman": "SU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "せ",
+      "roman": "SE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "そ",
+      "roman": "SO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "た",
+      "roman": "TA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ち",
+      "roman": "CHI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "つ",
+      "roman": "TSU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "て",
+      "roman": "TE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "と",
+      "roman": "TO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "な",
+      "roman": "NA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "に",
+      "roman": "NI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぬ",
+      "roman": "NU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ね",
+      "roman": "NE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "の",
+      "roman": "NO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "は",
+      "roman": "HA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ひ",
+      "roman": "HI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ふ",
+      "roman": "FU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "へ",
+      "roman": "HE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ほ",
+      "roman": "HO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ま",
+      "roman": "MA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "み",
+      "roman": "MI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "む",
+      "roman": "MU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "め",
+      "roman": "ME",
+      "type": "hiragana"
+    },
+    {
+      "jp": "も",
+      "roman": "MO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "や",
+      "roman": "YA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ゆ",
+      "roman": "YU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "よ",
+      "roman": "YO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ら",
+      "roman": "RA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "り",
+      "roman": "RI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "る",
+      "roman": "RU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "れ",
+      "roman": "RE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ろ",
+      "roman": "RO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "わ",
+      "roman": "WA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "を",
+      "roman": "WO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ん",
+      "roman": "N",
+      "type": "hiragana"
+    },
+    {
+      "jp": "が",
+      "roman": "GA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぎ",
+      "roman": "GI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぐ",
+      "roman": "GU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "げ",
+      "roman": "GE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ご",
+      "roman": "GO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ざ",
+      "roman": "ZA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "じ",
+      "roman": "JI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ず",
+      "roman": "ZU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぜ",
+      "roman": "ZE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぞ",
+      "roman": "ZO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "だ",
+      "roman": "DA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぢ",
+      "roman": "JI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "づ",
+      "roman": "ZU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "で",
+      "roman": "DE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ど",
+      "roman": "DO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ば",
+      "roman": "BA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "び",
+      "roman": "BI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぶ",
+      "roman": "BU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "べ",
+      "roman": "BE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぼ",
+      "roman": "BO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぱ",
+      "roman": "PA",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぴ",
+      "roman": "PI",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぷ",
+      "roman": "PU",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぺ",
+      "roman": "PE",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ぽ",
+      "roman": "PO",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ゃ",
+      "roman": "ya",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ゅ",
+      "roman": "yu",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ょ",
+      "roman": "yo",
+      "type": "hiragana"
+    },
+    {
+      "jp": "っ",
+      "roman": "tsu",
+      "type": "hiragana"
+    },
+    {
+      "jp": "ア",
+      "roman": "A",
+      "type": "katakana"
+    },
+    {
+      "jp": "イ",
+      "roman": "I",
+      "type": "katakana"
+    },
+    {
+      "jp": "ウ",
+      "roman": "U",
+      "type": "katakana"
+    },
+    {
+      "jp": "エ",
+      "roman": "E",
+      "type": "katakana"
+    },
+    {
+      "jp": "オ",
+      "roman": "O",
+      "type": "katakana"
+    },
+    {
+      "jp": "カ",
+      "roman": "KA",
+      "type": "katakana"
+    },
+    {
+      "jp": "キ",
+      "roman": "KI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ク",
+      "roman": "KU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ケ",
+      "roman": "KE",
+      "type": "katakana"
+    },
+    {
+      "jp": "コ",
+      "roman": "KO",
+      "type": "katakana"
+    },
+    {
+      "jp": "サ",
+      "roman": "SA",
+      "type": "katakana"
+    },
+    {
+      "jp": "シ",
+      "roman": "SHI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ス",
+      "roman": "SU",
+      "type": "katakana"
+    },
+    {
+      "jp": "セ",
+      "roman": "SE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ソ",
+      "roman": "SO",
+      "type": "katakana"
+    },
+    {
+      "jp": "タ",
+      "roman": "TA",
+      "type": "katakana"
+    },
+    {
+      "jp": "チ",
+      "roman": "CHI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ツ",
+      "roman": "TSU",
+      "type": "katakana"
+    },
+    {
+      "jp": "テ",
+      "roman": "TE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ト",
+      "roman": "TO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ナ",
+      "roman": "NA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ニ",
+      "roman": "NI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヌ",
+      "roman": "NU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ネ",
+      "roman": "NE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ノ",
+      "roman": "NO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ハ",
+      "roman": "HA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヒ",
+      "roman": "HI",
+      "type": "katakana"
+    },
+    {
+      "jp": "フ",
+      "roman": "FU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヘ",
+      "roman": "HE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ホ",
+      "roman": "HO",
+      "type": "katakana"
+    },
+    {
+      "jp": "マ",
+      "roman": "MA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ミ",
+      "roman": "MI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ム",
+      "roman": "MU",
+      "type": "katakana"
+    },
+    {
+      "jp": "メ",
+      "roman": "ME",
+      "type": "katakana"
+    },
+    {
+      "jp": "モ",
+      "roman": "MO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヤ",
+      "roman": "YA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ユ",
+      "roman": "YU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヨ",
+      "roman": "YO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ラ",
+      "roman": "RA",
+      "type": "katakana"
+    },
+    {
+      "jp": "リ",
+      "roman": "RI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ル",
+      "roman": "RU",
+      "type": "katakana"
+    },
+    {
+      "jp": "レ",
+      "roman": "RE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ロ",
+      "roman": "RO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ワ",
+      "roman": "WA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヲ",
+      "roman": "WO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ン",
+      "roman": "N",
+      "type": "katakana"
+    },
+    {
+      "jp": "ガ",
+      "roman": "GA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ギ",
+      "roman": "GI",
+      "type": "katakana"
+    },
+    {
+      "jp": "グ",
+      "roman": "GU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ゲ",
+      "roman": "GE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ゴ",
+      "roman": "GO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ザ",
+      "roman": "ZA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ジ",
+      "roman": "JI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ズ",
+      "roman": "ZU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ゼ",
+      "roman": "ZE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ゾ",
+      "roman": "ZO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ダ",
+      "roman": "DA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヂ",
+      "roman": "JI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ヅ",
+      "roman": "ZU",
+      "type": "katakana"
+    },
+    {
+      "jp": "デ",
+      "roman": "DE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ド",
+      "roman": "DO",
+      "type": "katakana"
+    },
+    {
+      "jp": "バ",
+      "roman": "BA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ビ",
+      "roman": "BI",
+      "type": "katakana"
+    },
+    {
+      "jp": "ブ",
+      "roman": "BU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ベ",
+      "roman": "BE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ボ",
+      "roman": "BO",
+      "type": "katakana"
+    },
+    {
+      "jp": "パ",
+      "roman": "PA",
+      "type": "katakana"
+    },
+    {
+      "jp": "ピ",
+      "roman": "PI",
+      "type": "katakana"
+    },
+    {
+      "jp": "プ",
+      "roman": "PU",
+      "type": "katakana"
+    },
+    {
+      "jp": "ペ",
+      "roman": "PE",
+      "type": "katakana"
+    },
+    {
+      "jp": "ポ",
+      "roman": "PO",
+      "type": "katakana"
+    },
+    {
+      "jp": "ャ",
+      "roman": "ya",
+      "type": "katakana"
+    },
+    {
+      "jp": "ュ",
+      "roman": "yu",
+      "type": "katakana"
+    },
+    {
+      "jp": "ョ",
+      "roman": "yo",
+      "type": "katakana"
+    },
+    {
+      "jp": "ッ",
+      "roman": "tsu",
+      "type": "katakana"
+    }
+  ]
+}

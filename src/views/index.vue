@@ -1,98 +1,84 @@
 <script setup lang="ts">
-const version = APP_VERSION
-const name = APP_NAME
+import type { Question, QuestionChar } from '@/models/question'
+
+useTitle(title('Play'))
+
+const questions = ref<Question[]>()
+const selectedQuestion = ref(0)
+const answer = ref('')
+const correct = ref(false)
+const showFeedback = ref(false)
+const type = ref<QuestionChar['type']>('hiragana')
+const start = ref(false)
+const onsetsu = ref(10)
+const gaku = ref(3)
+
+const question = computed(() =>
+  questions.value ? questions.value[selectedQuestion.value] : undefined
+)
+
+function generateQuestion() {
+  selectedQuestion.value = 0
+  questions.value = questionGenerate(type.value, onsetsu.value, gaku.value)
+  start.value = true
+}
+
+function handleOnEnter() {
+  correct.value = question.value?.roman.toLowerCase() == answer.value.toLowerCase()
+  if (correct.value) {
+    if (selectedQuestion.value == 9) {
+      start.value = false
+    } else selectedQuestion.value++
+  }
+  answer.value = ''
+  showFeedback.value = true
+  setTimeout(() => {
+    showFeedback.value = false
+  }, 1e3)
+}
 </script>
 
 <template>
-  <n-h1>Hello there 👋</n-h1>
-  <a href="https://github.com/okyaneka/my-vue-starter" target="_blank">
-    <n-button size="small" color="#24292e">
-      View on Github
-      <template #icon>
-        <n-icon><i-ri-github-fill /></n-icon>
-      </template>
-    </n-button>
-  </a>
-  <router-link to="/nsfw">
-    <n-p>This is {{ name }} v{{ version }}</n-p>
-  </router-link>
-
-  <n-h2>What's insides?</n-h2>
-  <n-p>This app using:</n-p>
-  <n-ul class="list-disc list-outside">
-    <n-li><a target="_blank" href="https://www.naiveui.com/">Naive UI</a></n-li>
-    <n-li><a target="_blank" href="https://tailwindcss.com/">Tailwind CSS</a></n-li>
-    <n-li><a target="_blank" href="https://iconify.design/">Icondify Remix Icon</a></n-li>
-    <n-li><a target="_blank" href="https://vueuse.org/">VueUse </a></n-li>
-    <n-li><a target="_blank" href="https://pinia.vuejs.org/">Pinia</a></n-li>
-    <n-li><a target="_blank" href="https://router.vuejs.org/">Vue Router</a></n-li>
-    <n-li
-      ><a target="_blank" href="https://www.npmjs.com/package/unplugin-auto-import"
-        >Unplugin Auto Import</a
-      ></n-li
-    >
-    <n-li
-      ><a target="_blank" href="https://www.npmjs.com/package/unplugin-vue-components"
-        >Unplugin Vue Components</a
-      ></n-li
-    >
-    <n-li
-      ><a target="_blank" href="https://www.npmjs.com/package/vite-plugin-vue-layouts"
-        >Vite Plugin Vue Layouts</a
-      ></n-li
-    >
-    <n-li
-      ><a target="_blank" href="https://www.npmjs.com/package/vite-plugin-pages"
-        >Vite Plugin Pages</a
-      ></n-li
-    >
-  </n-ul>
-
-  <n-h2>How to</n-h2>
-  <n-h3>Run dev</n-h3>
-
-  <n-card class="bg-gray-50" bordered>
-    <pre>
-pnpm dev      
-</pre
-    >
-  </n-card>
-  <n-h3>Build</n-h3>
-
-  <n-card class="bg-gray-50" bordered>
-    <pre>
-pnpm build
-</pre
-    >
-  </n-card>
-
-  <n-h2>Directory Structure</n-h2>
-
-  <n-card class="bg-gray-50" bordered>
-    <pre>
-/components
-/layouts
-/middlewares
-/models
-/views
-</pre
-    >
-  </n-card>
-
-  <n-h3>/components</n-h3>
-  <n-p>This directory is used for saving component files.</n-p>
-  <n-h3>/layouts</n-h3>
-  <n-p>This directory is used for saving layout files.</n-p>
-  <n-h3>/middlewares</n-h3>
-  <n-p>This directory is used for saving middleware files.</n-p>
-  <n-h3>/models</n-h3>
-  <n-p>This directory is used for saving model files.</n-p>
-  <n-p>This models are include store function.</n-p>
-  <n-h3>/views</n-h3>
-  <n-p>This directory is used for saving view files.</n-p>
-  <n-p>This also generate route based on path created.</n-p>
-
-  <n-p>
-    <n-text strong italic> nb: please visit the source for more info </n-text>
-  </n-p>
+  <main class="h-screen flex items-center">
+    <n-space class="w-full" vertical align="center" :size="16">
+      <n-card class="w-96">
+        <div v-if="!start" class="flex flex-col gap-4" align="center" :size="16">
+          <n-radio-group v-model:value="type">
+            <n-radio-button
+              :class="{ 'bg-primary text-white': type == 'hiragana' }"
+              value="hiragana"
+            >
+              HIRAGANA
+            </n-radio-button>
+            <n-radio-button
+              :class="{ 'bg-primary text-white': type == 'katakana' }"
+              value="katakana"
+            >
+              KATAKANA
+            </n-radio-button>
+          </n-radio-group>
+          <div class="flex gap-4">
+            <n-form-item label="Onsetsu" :show-feedback="false">
+              <n-input-number class="w-full" v-model:value="onsetsu" :show-button="false" />
+            </n-form-item>
+            <n-form-item label="Gaku" :show-feedback="false">
+              <n-input-number class="w-full" v-model:value="gaku" :show-button="false" />
+            </n-form-item>
+          </div>
+          <n-button type="primary" @click="generateQuestion">START</n-button>
+        </div>
+        <n-space v-else vertical :size="16" align="center">
+          <div class="text-6xl font-medium text-center">{{ question?.jp }}</div>
+          <!-- <div class="text-center">{{ question?.roman }}</div> -->
+          <n-input v-model:value="answer" @keydown.enter="handleOnEnter" placeholder="" />
+          <div v-if="showFeedback" class="text-center">
+            <n-icon size="40" :class="correct ? 'text-green-500' : 'text-red-500'">
+              <i-ri-checkbox-circle-fill v-if="correct" />
+              <i-ri-close-circle-fill v-else />
+            </n-icon>
+          </div>
+        </n-space>
+      </n-card>
+    </n-space>
+  </main>
 </template>
