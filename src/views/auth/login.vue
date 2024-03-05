@@ -12,7 +12,7 @@ meta:
           <n-input />
         </n-form-item>
         <n-form-item label="Password">
-          <n-input type="password" show-password-toggle />
+          <n-input type="password" show-password-on="click" />
         </n-form-item>
         <n-button type="primary" block attr-type="submit">Login</n-button>
       </n-form>

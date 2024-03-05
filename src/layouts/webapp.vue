@@ -5,9 +5,3 @@
     </n-layout-content>
   </n-layout>
 </template>
-
-<style>
-body {
-  background-color: red;
-}
-</style>
