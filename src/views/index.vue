@@ -10,9 +10,8 @@ function handleClickTry() {
   showReview.value = false
 }
 
-function handleFinish(e: QuestionResults) {
-  console.log(results)
-  results.value = e
+function handleFinish(value: QuestionResults) {
+  results.value = value
   showReview.value = true
 }
 

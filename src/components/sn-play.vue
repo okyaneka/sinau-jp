@@ -27,6 +27,7 @@ const question = computed(() =>
 )
 
 function startQuiz() {
+  answers.value = []
   selectedQuestion.value = 0
   questions.value = questionGenerate(type.value, onsetsu.value, gaku.value)
   start.value = true
