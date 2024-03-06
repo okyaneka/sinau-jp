@@ -33,16 +33,19 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
 <template>
   <n-config-provider :theme-overrides="themeOverrides">
     <n-global-style />
-    <router-view />
-    <!-- <router-view v-slot="{ Component, route }">
+    <router-view v-slot="{ Component, route }">
       <transition>
         <component :is="Component" :key="route.path" />
       </transition>
-    </router-view> -->
+    </router-view>
   </n-config-provider>
 </template>
 
 <style lang="postcss">
+body {
+  @apply bg-gray-50 !important;
+}
+
 a {
   @apply text-primary no-underline;
 }

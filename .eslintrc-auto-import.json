@@ -311,6 +311,7 @@
     "chars": true,
     "title": true,
     "questionChars": true,
-    "questionGenerate": true
+    "questionGenerate": true,
+    "formattedTimer": true
   }
 }
