@@ -58,8 +58,7 @@ const yayuyoyes = [
   'ジ',
   'ヂ',
   'ビ',
-  'ピ',
-  'フ'
+  'ピ'
 ]
 
 function filterChar(char: string, v: QuestionChar, lastChar: boolean) {
