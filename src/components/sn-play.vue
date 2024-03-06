@@ -17,6 +17,7 @@ const results = ref<QuestionResults>()
 const selectedQuestion = ref(0)
 const showFeedback = ref(false)
 const start = ref(false)
+const showHint = ref(false)
 const time = ref(0)
 const timer = ref()
 const type = ref<QuestionChar['type']>('hiragana')
@@ -45,9 +46,9 @@ function stopTimer() {
   timer.value = undefined
 }
 
-function handleOnEnter() {
-  correct.value = question.value?.roman.toLowerCase() == answer.value.toLowerCase()
-  setAnswer(correct.value)
+function submitAnswer() {
+  if (answer.value.trim() == '') return
+  correct.value = setAnswer()
   if (correct.value) {
     if (selectedQuestion.value == onsetsu.value - 1) {
       stopTimer()
@@ -66,20 +67,28 @@ function handleOnEnter() {
   }, 1e3)
 }
 
-function setAnswer(correct: boolean) {
-  if (!question.value) return
+function setAnswer() {
+  const correct = question.value?.roman.toLowerCase() == answer.value.toLowerCase()
+  if (!question.value) return false
+
   if (answers.value[selectedQuestion.value] == undefined) {
     answers.value[selectedQuestion.value] = {
       question: question.value,
       answers: [{ answer: answer.value, correct }]
     }
   } else answers.value[selectedQuestion.value].answers.push({ answer: answer.value, correct })
+
+  if (answers.value[selectedQuestion.value].answers.length >= 3 && !correct) showHint.value = true
+  else showHint.value = false
+  return correct
 }
 
 function handleClickAbort() {
   emit('abort')
   stopTimer()
+  answer.value = ''
   start.value = false
+  showHint.value = false
 }
 </script>
 
@@ -111,20 +120,21 @@ function handleClickAbort() {
     </n-space>
     <n-space v-else vertical :size="16" align="center">
       <div class="text-center">{{ formattedTimer(time) }}</div>
-      <div class="text-6xl font-medium text-center">{{ question?.jp }}</div>
-      <!-- <div class="text-center">{{ question?.roman }}</div> -->
-      <n-input
-        class="text-center"
-        v-model:value="answer"
-        @keydown.enter="handleOnEnter"
-        placeholder=""
-      />
       <div v-if="showFeedback" class="text-center">
         <n-icon size="40" :class="correct ? 'text-green-500' : 'text-red-500'">
           <i-ri-checkbox-circle-fill v-if="correct" />
           <i-ri-close-circle-fill v-else />
         </n-icon>
       </div>
+      <div v-if="showHint" class="text-center">{{ question?.roman }}</div>
+      <div class="text-6xl font-medium text-center">{{ question?.jp }}</div>
+      <n-input
+        class="text-center"
+        v-model:value="answer"
+        @keydown.enter="submitAnswer"
+        placeholder=""
+      />
+
       <n-button-group>
         <n-popconfirm
           @positive-click="handleClickAbort"
@@ -138,6 +148,7 @@ function handleClickAbort() {
           Are you sure?
         </n-popconfirm>
         <n-button type="primary" @click="startQuiz">RESTART</n-button>
+        <n-button type="success" @click="submitAnswer">SUBMIT</n-button>
       </n-button-group>
     </n-space>
   </n-card>
