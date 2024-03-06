@@ -1,4 +1,3 @@
-// @ts-ignore
 import data from '~/data/chars.json'
 
 export interface QuestionChar {
@@ -12,18 +11,25 @@ export interface Question {
   roman: string
 }
 
-export interface QuestionAnswer {
+export interface QuestionAnswers {
   question: Question
-  answers: Answer[]
+  answers: QuestionAnswer[]
 }
 
-export interface Answer {
+export interface QuestionAnswer {
   answer: string
   correct: boolean
 }
 
+export interface QuestionResults {
+  time: number
+  answers: QuestionAnswers[]
+}
+
+// @ts-ignore
 export const questionChars: QuestionChar[] = data.chars
 
+const chishi = ['し', 'シ', 'ち', 'チ']
 const aiueo = ['あ', 'ア', 'い', 'イ', 'う', 'ウ', 'え', 'エ', 'お', 'オ']
 const tsu = ['ッ', 'っ']
 const en = ['ん', 'ン']
@@ -90,8 +96,10 @@ export function questionGenerate(
 
         u1.jp += char.jp
 
-        if (yayuyo.includes(char.jp)) u1.roman = u1.roman.slice(0, -1) + char.roman
-        else u1.roman += char.roman
+        if (yayuyo.includes(char.jp)) {
+          const isShi = chishi.includes(u1.jp.slice(-2, -1))
+          u1.roman = u1.roman.slice(0, -1) + char.roman.slice(isShi ? -1 : 0)
+        } else u1.roman += char.roman
         return u1
       },
       { jp: '', roman: '' }

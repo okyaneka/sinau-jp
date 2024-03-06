@@ -22,6 +22,7 @@ declare module 'vue' {
     IRiRefreshLine: typeof import('~icons/ri/refresh-line')['default']
     IRiUserLine: typeof import('~icons/ri/user-line')['default']
     NButton: typeof import('naive-ui')['NButton']
+    NButtonGroup: typeof import('naive-ui')['NButtonGroup']
     NCard: typeof import('naive-ui')['NCard']
     NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NForm: typeof import('naive-ui')['NForm']
@@ -39,6 +40,7 @@ declare module 'vue' {
     NLayoutContent: typeof import('naive-ui')['NLayoutContent']
     NLi: typeof import('naive-ui')['NLi']
     NP: typeof import('naive-ui')['NP']
+    NPopconfirm: typeof import('naive-ui')['NPopconfirm']
     NRadioButton: typeof import('naive-ui')['NRadioButton']
     NRadioGroup: typeof import('naive-ui')['NRadioGroup']
     NResult: typeof import('naive-ui')['NResult']
@@ -55,5 +57,7 @@ declare module 'vue' {
     PTest: typeof import('./components/p-test.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SnPlay: typeof import('./components/sn-play.vue')['default']
+    SnResult: typeof import('./components/sn-result.vue')['default']
   }
 }
