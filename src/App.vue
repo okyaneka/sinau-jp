@@ -18,6 +18,11 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
     fontSizeTiny: '.5rem',
     fontSize: '16px'
   },
+  Space: {
+    gapMedium: '16px',
+    gapSmall: '8px',
+    gapLarge: '24px'
+  },
   Typography: {
     headerFontSize1: '2rem',
     headerFontSize2: '1.75rem',
@@ -38,6 +43,16 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
         <component :is="Component" :key="route.path" />
       </transition>
     </router-view>
+    <div class="text-center">
+      <a href="https://github.com/okyaneka/sinau-jp" target="_blank">
+        <n-button size="small" color="#24292e">
+          View on Github
+          <template #icon>
+            <n-icon><i-ri-github-fill /></n-icon>
+          </template>
+        </n-button>
+      </a>
+    </div>
   </n-config-provider>
 </template>
 

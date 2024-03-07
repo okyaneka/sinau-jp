@@ -97,26 +97,55 @@ export function questionGenerate(
       .map(() => yayuyoChar)
       .reduce((cur, car) => [...cur, ...car], [])
   )
-  moji.sort(() => (Math.random() > 0.5 ? 1 : -1))
 
-  return new Array(gaku).fill(0).reduce<Question[]>((u, v) => {
+  /**
+   * peluang/jaminan karakter yang "belum terambil" meningkat ketika ada karakter yang terambil lebih dari satu kali
+   *
+   * step
+   * 1. mencari data karakter dan jumlah terambilnya
+   *
+   */
+
+  return new Array(gaku).fill(0).reduce<Question[]>((car, cur) => {
+    const picked = moji.map((v) => {
+      const picked = car
+        .map((v1) => v1.jp)
+        .join('')
+        .split('')
+        .filter((v1) => v1 == v.jp).length
+      return {
+        char: v,
+        picked
+      }
+    })
+    const twices = picked.filter((v) => v.picked > 1)
+
     const question = new Array(onsetsu).fill(0).reduce<Question>(
-      (u1, v1, i) => {
-        const chars = moji.filter((v) => filterChar(u1.jp.slice(-1), v, i + 1 == onsetsu))
+      (car2, cur2, i) => {
+        const chars = moji.filter((v) => filterChar(car2.jp.slice(-1), v, i + 1 == onsetsu))
         const YAYUYO = moji.filter((v) => yayuyo.includes(v.jp))
+        const indexes = new Array(chars.length).fill(0).map((v, i) => i)
 
-        const useYayuyo = yayuyoyes.some((v) => v == u1.jp) && Math.random() * 2 > 1
+        const useYayuyo = yayuyoyes.some((v) => v == car2.jp) && Math.random() * 2 > 1
+        if (twices.length) {
+          picked
+            .filter((v) => v.picked == 0)
+            .forEach((v) => {
+              const index = chars.findIndex((v1) => v1.jp == v.char.jp)
+              if (index != -1) indexes.push(index)
+            })
+        }
         const char = useYayuyo
           ? YAYUYO[Math.floor(Math.random() * YAYUYO.length)]
-          : chars[Math.floor(Math.random() * chars.length)]
+          : chars[indexes[Math.floor(Math.random() * indexes.length)]]
 
-        u1.jp += char.jp
+        car2.jp += char.jp
 
         if (yayuyo.includes(char.jp)) {
-          const isShi = chishi.includes(u1.jp.slice(-2, -1))
-          u1.roman = u1.roman.slice(0, -1) + char.roman.slice(isShi ? -1 : 0)
-        } else u1.roman += char.roman
-        return u1
+          const isShi = chishi.includes(car2.jp.slice(-2, -1))
+          car2.roman = car2.roman.slice(0, -1) + char.roman.slice(isShi ? -1 : 0)
+        } else car2.roman += char.roman
+        return car2
       },
       { jp: '', roman: '' }
     )
@@ -128,7 +157,7 @@ export function questionGenerate(
 
     question.roman = question.roman.toUpperCase()
 
-    return [...u, question]
+    return [...car, question]
   }, [])
 }
 
