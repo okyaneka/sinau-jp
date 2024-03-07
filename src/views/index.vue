@@ -66,6 +66,7 @@ function submitAnswer() {
       }
       answers.value = []
       isReview.value = true
+      isStart.value = false
     } else selectedQuestion.value++
   }
   answer.value = ''
