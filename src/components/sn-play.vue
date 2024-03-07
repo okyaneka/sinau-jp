@@ -3,7 +3,6 @@ import type { Question, QuestionAnswers, QuestionChar, QuestionResults } from '~
 import { formattedTimer } from '~/global/helper'
 
 const emit = defineEmits<{
-  (e: 'finish', value: QuestionResults): void
   (e: 'abort'): void
 }>()
 
@@ -16,8 +15,10 @@ const questions = ref<Question[]>()
 const results = ref<QuestionResults>()
 const selectedQuestion = ref(0)
 const showFeedback = ref(false)
-const start = ref(false)
+const isStart = ref(false)
+const isReview = ref(false)
 const showHint = ref(false)
+const show = ref<boolean[]>([])
 const time = ref(0)
 const timer = ref()
 const type = ref<QuestionChar['type']>('hiragana')
@@ -27,10 +28,11 @@ const question = computed(() =>
 )
 
 function startQuiz() {
+  isReview.value = false
   answers.value = []
   selectedQuestion.value = 0
   questions.value = questionGenerate(type.value, onsetsu.value, gaku.value)
-  start.value = true
+  isStart.value = true
   startTimer()
 }
 
@@ -58,7 +60,7 @@ function submitAnswer() {
         answers: answers.value
       }
       answers.value = []
-      emit('finish', results.value)
+      isReview.value = true
     } else selectedQuestion.value++
   }
   answer.value = ''
@@ -88,14 +90,60 @@ function handleClickAbort() {
   emit('abort')
   stopTimer()
   answer.value = ''
-  start.value = false
+  isStart.value = false
   showHint.value = false
+  isReview.value = false
 }
 </script>
 
 <template>
-  <n-card class="w-96 max-w-full mt-56">
-    <n-space v-if="!start" vertical align="center" :size="16">
+  <n-card class="w-96 max-w-full">
+    <n-space v-if="isReview && results" vertical :size="16">
+      <div class="text-center text-3xl">Result</div>
+      <div class="text-center">Time: {{ formattedTimer(results.time) }}</div>
+
+      <n-table>
+        <n-thead>
+          <n-tr>
+            <n-th>Word</n-th>
+            <n-th class="text-right">Total Attempt</n-th>
+          </n-tr>
+        </n-thead>
+        <n-tbody>
+          <n-tr v-for="(answer, index) in results.answers">
+            <n-td>
+              <div class="text-xl font-medium">{{ answer.question.jp }}</div>
+              <div class="text-xs">{{ answer.question.roman }}</div>
+            </n-td>
+            <n-td class="text-right">
+              <div class="inline-flex items-center gap-2">
+                <span> {{ answer.answers.length }}x </span>
+
+                <n-button circle @click="show[index] = !show[index]">
+                  <template #icon>
+                    <n-icon>
+                      <i-ri-eye-line v-if="!show[index]" />
+                      <i-ri-eye-off-line v-else />
+                    </n-icon>
+                  </template>
+                </n-button>
+              </div>
+              <div class="text-xs" v-if="show[index]">
+                {{ answer.answers.map((v) => v.answer.toUpperCase()).join(', ') }}
+              </div>
+            </n-td>
+          </n-tr>
+        </n-tbody>
+      </n-table>
+
+      <n-space justify="center">
+        <n-button-group>
+          <n-button secondary type="primary" @click="handleClickAbort">Back</n-button>
+          <n-button type="primary" @click="startQuiz">Try Again</n-button>
+        </n-button-group>
+      </n-space>
+    </n-space>
+    <n-space v-else-if="!isStart" vertical align="center" :size="16">
       <n-radio-group v-model:value="type">
         <n-radio-button :class="{ 'bg-primary text-white': type == 'hiragana' }" value="hiragana">
           HIRAGANA
