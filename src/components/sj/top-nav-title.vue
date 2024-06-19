@@ -1,10 +1,6 @@
 <script setup lang="ts">
 import type { RouteLocationRaw } from 'vue-router'
 import { config } from '~/global/config'
-
-defineProps<{
-  to: RouteLocationRaw
-}>()
 </script>
 
 <template>
