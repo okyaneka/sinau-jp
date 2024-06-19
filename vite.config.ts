@@ -28,6 +28,7 @@ export default ({ mode }: { mode: string }) => {
         registerType: 'autoUpdate',
         injectRegister: 'auto',
         manifest: {
+          name: 'Sinau JP',
           screenshots: [
             {
               src: 'img/app.png',
