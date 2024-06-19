@@ -102,6 +102,8 @@ function abortQuiz() {
 </script>
 
 <template>
+  <sj-top-nav-title />
+
   <section class="p-2">
     <n-space class="w-full" vertical align="center">
       <n-card class="w-96 max-w-full">
@@ -219,7 +221,12 @@ function abortQuiz() {
               />
             </n-form-item>
           </div>
-          <n-button type="primary" @click="startQuiz">START</n-button>
+          <n-button-group>
+            <router-link to="/guide">
+              <n-button secondary type="primary">GUIDE</n-button>
+            </router-link>
+            <n-button type="primary" @click="startQuiz">START</n-button>
+          </n-button-group>
         </n-space>
       </n-card>
     </n-space>

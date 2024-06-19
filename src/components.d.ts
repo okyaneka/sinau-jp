@@ -7,6 +7,8 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    copy: typeof import('./components/sj/top-nav-back copy.vue')['default']
+    IRiArrowLeft: typeof import('~icons/ri/arrow-left')['default']
     IRiArrowLeftLine: typeof import('~icons/ri/arrow-left-line')['default']
     IRiArrowRightLine: typeof import('~icons/ri/arrow-right-line')['default']
     IRiCheckboxCircleFill: typeof import('~icons/ri/checkbox-circle-fill')['default']
@@ -62,6 +64,9 @@ declare module 'vue' {
     PTest: typeof import('./components/p-test.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SjTopNav: typeof import('./components/sj/top-nav.vue')['default']
+    SjTopNavBack: typeof import('./components/sj/top-nav-back.vue')['default']
+    SjTopNavTitle: typeof import('./components/sj/top-nav-title.vue')['default']
     SnPlay: typeof import('./components/sn-play.vue')['default']
     SnResult: typeof import('./components/sn-result.vue')['default']
   }

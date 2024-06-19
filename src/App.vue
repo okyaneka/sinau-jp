@@ -39,9 +39,9 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
   <n-config-provider :theme-overrides="themeOverrides">
     <n-global-style />
     <router-view v-slot="{ Component, route }">
-      <transition>
-        <component :is="Component" :key="route.path" />
-      </transition>
+      <!-- <transition> -->
+      <component :is="Component" :key="route.path" />
+      <!-- </transition> -->
     </router-view>
     <div class="text-center">
       <a href="https://github.com/okyaneka/sinau-jp" target="_blank">
