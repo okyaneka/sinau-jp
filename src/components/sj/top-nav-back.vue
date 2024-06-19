@@ -21,5 +21,5 @@ withDefaults(
     </RouterLink>
     <div class="flex-1 text-center font-semibold">{{ title }}</div>
   </n-card>
-  <div class="mb-15"></div>
+  <div class="mb-16"></div>
 </template>
