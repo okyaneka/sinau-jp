@@ -65,7 +65,8 @@ export default ({ mode }: { mode: string }) => {
         },
         workbox: {
           clientsClaim: true,
-          skipWaiting: true
+          skipWaiting: true,
+          cleanupOutdatedCaches: false
         }
       }),
       vue(),

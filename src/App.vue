@@ -1,5 +1,15 @@
 <script setup lang="ts">
 import type { GlobalThemeOverrides } from 'naive-ui'
+import { useRegisterSW } from 'virtual:pwa-register/vue'
+
+const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW({
+  onRegistered(r) {
+    r &&
+      setInterval(() => {
+        r.update()
+      }, 3e4)
+  }
+})
 
 const themeOverrides = computed<GlobalThemeOverrides>(() => ({
   common: {
@@ -43,6 +53,7 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
       <component :is="Component" :key="route.path" />
       <!-- </transition> -->
     </router-view>
+
     <div class="text-center">
       <a href="https://github.com/okyaneka/sinau-jp" target="_blank">
         <n-button size="small" color="#24292e">
