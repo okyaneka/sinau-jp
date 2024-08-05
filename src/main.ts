@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
+import { registerSW } from 'virtual:pwa-register'
 
 import './style.css'
 
@@ -14,3 +15,10 @@ app.use(router)
 app.use(naive)
 
 app.mount('#app')
+
+const updateSW = registerSW({
+  onNeedRefresh() {
+    console.log('need refresh')
+  },
+  onOfflineReady() {}
+})
