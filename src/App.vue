@@ -65,7 +65,7 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
       </a>
     </div>
 
-    <div class="fixed left-0 bottom-0 w-full">
+    <div v-if="needRefresh" class="fixed left-0 bottom-0 w-full">
       <div class="flex p-4 justify-end">
         <n-alert title="New update available!" type="info" :show-icon="false">
           <n-button type="primary" @click="updateServiceWorker()">Reload</n-button>
