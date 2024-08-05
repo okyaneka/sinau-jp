@@ -25,10 +25,9 @@ export default ({ mode }: { mode: string }) => {
     },
     plugins: [
       VitePWA({
-        registerType: 'autoUpdate',
+        registerType: 'prompt',
         injectRegister: 'auto',
         manifest: {
-          name: 'Sinau JP',
           screenshots: [
             {
               src: 'img/app.png',
@@ -43,7 +42,7 @@ export default ({ mode }: { mode: string }) => {
               form_factor: 'wide'
             }
           ],
-          name: process.env.VITE_APP_NAME,
+          name: APP_NAME,
           short_name: APP_NAME,
           description: '',
           theme_color: '#ffffff',

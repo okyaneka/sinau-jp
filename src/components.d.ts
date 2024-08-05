@@ -27,6 +27,7 @@ declare module 'vue' {
     IRiHomeLine: typeof import('~icons/ri/home-line')['default']
     IRiRefreshLine: typeof import('~icons/ri/refresh-line')['default']
     IRiUserLine: typeof import('~icons/ri/user-line')['default']
+    NAlert: typeof import('naive-ui')['NAlert']
     NButton: typeof import('naive-ui')['NButton']
     NButtonGroup: typeof import('naive-ui')['NButtonGroup']
     NCard: typeof import('naive-ui')['NCard']

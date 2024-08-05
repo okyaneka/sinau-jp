@@ -54,10 +54,6 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
       <!-- </transition> -->
     </router-view>
 
-    <div class="text-center p-2 uppercase font-bold">
-      {{ needRefresh }}
-    </div>
-
     <div class="text-center">
       <a href="https://github.com/okyaneka/sinau-jp" target="_blank">
         <n-button size="small" color="#24292e">
@@ -68,7 +64,14 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
         </n-button>
       </a>
     </div>
-    <div></div>
+
+    <div class="fixed left-0 bottom-0 w-full">
+      <div class="flex p-4 justify-end">
+        <n-alert title="New update available!" type="info" :show-icon="false">
+          <n-button type="primary" @click="updateServiceWorker()">Reload</n-button>
+        </n-alert>
+      </div>
+    </div>
   </n-config-provider>
 </template>
 
