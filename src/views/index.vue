@@ -205,6 +205,17 @@ function abortQuiz() {
           </n-radio-group>
           <div class="flex gap-4">
             <n-form-item label="Onsetsu" :show-feedback="false">
+              <template #label>
+                <div class="flex items-center">
+                  <span class="mr-0.5"> Onsetsu </span>
+                  <n-popover trigger="hover">
+                    <template #trigger>
+                      <n-icon :size="12"><i-ri-question-line /></n-icon>
+                    </template>
+                    <span>Number of question</span>
+                  </n-popover>
+                </div>
+              </template>
               <n-input-number
                 class="w-full"
                 v-model:value="onsetsu"
@@ -213,6 +224,17 @@ function abortQuiz() {
               />
             </n-form-item>
             <n-form-item label="Gaku" :show-feedback="false">
+              <template #label>
+                <div class="flex items-center">
+                  <span class="mr-0.5"> Gaku </span>
+                  <n-popover trigger="hover">
+                    <template #trigger>
+                      <n-icon :size="12"><i-ri-question-line /></n-icon>
+                    </template>
+                    <span>Number of character</span>
+                  </n-popover>
+                </div>
+              </template>
               <n-input-number
                 class="w-full"
                 v-model:value="gaku"
