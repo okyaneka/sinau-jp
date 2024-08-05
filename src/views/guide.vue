@@ -46,7 +46,7 @@ const p = ref(['K', 'S', 'T', 'N', 'H', 'M', 'Y', 'R', 'W', 'N'])
           <!-- <n-table single-column single-line bordered class="w-full text-center"> -->
           <tbody>
             <tr v-for="group in chars">
-              <td v-for="i in group">
+              <td class="cursor-pointer hover:bg-primary hover:bg-opacity-5" v-for="i in group">
                 <template v-if="i != null">
                   <div class="text-xl font-semibold">{{ i.jp }}</div>
                   <div class="text-sm">{{ i.roman }}</div>
