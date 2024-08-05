@@ -25,7 +25,7 @@ export default ({ mode }: { mode: string }) => {
     },
     plugins: [
       VitePWA({
-        registerType: 'autoUpdate',
+        registerType: 'prompt',
         injectRegister: 'auto',
         manifest: {
           name: 'Sinau JP',

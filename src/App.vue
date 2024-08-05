@@ -54,10 +54,6 @@ const themeOverrides = computed<GlobalThemeOverrides>(() => ({
       <!-- </transition> -->
     </router-view>
 
-    <div class="text-center p-2 uppercase font-bold">
-      {{ needRefresh }}
-    </div>
-
     <div class="text-center">
       <a href="https://github.com/okyaneka/sinau-jp" target="_blank">
         <n-button size="small" color="#24292e">
